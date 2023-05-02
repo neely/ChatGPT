@@ -6,6 +6,7 @@
 
 
 **Me**
+
 I would like to make a python script that I can run from the command line that will have two files as input arguments and one filename as output. The two files I am inputting are a fasta and a tsv. The fasta files have NCBI RefSeq headers such that it is accession (ex. XP_027423268.1) and then description. The tsv file will have this accession in the "product_accession" column. Once you have found the accession of a fasta entry in the tsv, I would like you take the value in the "symbol" column from the same row, and add this to the end of the fasta header as "GN=" then the symbol value. So ">XP_027423268.1 gametogenetin-binding protein 2 isoform X5 [Zalophus californianus]" would become ">XP_027423268.1 gametogenetin-binding protein 2 isoform X5 [Zalophus californianus] GN=GGNBP2". If there is no value in the symbol column for a given product_accession, don't add anything to the fasta header. Since there are many fasta entries (often well over 20 000), you will need to perform many lookups. The new fasta with the modified hearders will be the output of the script.
 
 
@@ -76,6 +77,7 @@ Replace input.fasta, input.tsv, and output.fasta with the actual file paths for 
 
 
 **Me**
+
 Sorry, the table is a tab-delimited .txt file. 
 
 
@@ -143,6 +145,7 @@ Replace input.fasta, input.txt, and output.fasta with the actual file paths for 
 
 
 **Me**
+
 The input txt file has many columns, delineated by column headers on the first row. There are many columns, for instance I can see 19 in my test file, but the columns that are important for this script are "product_accession" and "symbol". I am not sure the "accession_to_symbol" section of your script is actually making a dictionary.
 
 
@@ -217,6 +220,7 @@ Replace input.fasta, input.txt, and output.fasta with the actual file paths for 
 
 
 **Me**
+
 Okay, I see what you are doing. I don't think you are handling the FASTA format correctly. A fasta has a header line which is ">Accession Description" and then a line break and then rows of letters which is the sequence, and these have line breaks. Though the length of each line can be different, in this case each is 80 characters long. At the end of the sequence there is another line break, then the next entry begins with a new header line. Currently you have removed all line breaks for each FASTA entry, concatenating the header and the sequence it describes. Instead, I would like you to add "GN=" then the symbol value to the end of the header line, so it will be ">Accession Description GN=symbol", and preserve the original structure of the FASTA.
 
 
@@ -266,6 +270,7 @@ This implementation should correctly read in the FASTA and TSV files, map the ac
 
 
 **Me**
+
 Awesome, that did it!
 
 

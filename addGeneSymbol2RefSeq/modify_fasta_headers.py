@@ -1,3 +1,5 @@
+# To use run "python modify_fasta_headers.py input.fasta input.tsv output.fasta" from command line. Replace input.fasta, input.tsv, and output.fasta with the actual file paths for your input and output files. input.tsv is a feature table tab delimited .txt file. See https://github.com/neely/ChatGPT repo for details.
+
 import sys
 
 # Read in the input files

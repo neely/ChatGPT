@@ -1,0 +1,3 @@
+XP_027423268.1
+XP_027423270.1 homeobox protein Hox-B5 [Zalophus californianus]
+schlafen family member 5 isoform X1 [Zalophus californianus]

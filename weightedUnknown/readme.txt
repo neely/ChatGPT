@@ -1,0 +1,3 @@
+Now that chats can be shared I will just share the link https://chatgpt.com/share/677d940c-6454-800c-a8de-bd7bf8378daa
+
+You can tell I had to make it super simple for chatGPT but it worked well. I was also using test files I had already searched from Mascot and know how many spectra there were and IDs. I am not sure how well this will work to other mgfs (this was msconvert) or other mzid (this was mascot export) but it does work to quantify not just how many spectra were unknown, but what that precursor intensity was. The caveat of course is this is not relative to the whole TIC as we are not integrating these intensisites and this is only when the precursor was sampled. Next step would be to integrate precursor areas and get an actual weight of unknowns.
